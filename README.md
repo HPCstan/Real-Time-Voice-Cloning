@@ -1,5 +1,8 @@
 # Real-Time Voice Cloning
 
+> [!NOTE]
+> **本專案已擴展！** 現在支援基於 FastAPI 的 **REST API** 與現代化的 **React Web 操作介面**。
+
 This repository is an implementation of [Transfer Learning from Speaker Verification to
 Multispeaker Text-To-Speech Synthesis](https://arxiv.org/pdf/1806.04558.pdf) (SV2TTS) with a vocoder that works in real-time. This was my [master's thesis](https://matheo.uliege.be/handle/2268.2/6801).
 
@@ -25,7 +28,36 @@ Like everything else in Deep Learning, this repo has quickly gotten old. Many Sa
 - Check out [paperswithcode](https://paperswithcode.com/task/speech-synthesis/) for other repositories and recent research in the field of speech synthesis.
 - Check out [Chatterbox](https://github.com/resemble-ai/chatterbox) for a similar project up to date with the 2025 SOTA in voice cloning
 
-## Running the toolbox
+## 🚀 Real-Time Voice Cloning API & Web UI
+
+我們新增了一個現代化的 API 與網頁操作介面，讓您可以更方便地使用語音克隆功能，並輕鬆整合至您的機器人或應用程式中。
+
+### 🌟 特色
+- **現代化介面**: 採用玻璃擬態 (Glassmorphism) 設計。
+- **簡單易用**: 支援拖放上傳音訊、直接輸入文字進行克隆。
+- **高效能**: 基於 FastAPI 實作，支援多種音訊格式 (WAV, MP3, etc.)。
+
+### 🛠️ 如何啟動 (Quick Start)
+
+1. **環境準備**: 確保已安裝 `uv` ( astral.sh/uv )。
+2. **安裝依賴與運行**:
+   ```bash
+   # 在專案目錄下
+   uv sync --extra cpu
+   uv run python fast_api.py
+   ```
+3. **訪問介面**:
+   - **網頁操作介面**: [http://localhost:8000](http://localhost:8000)
+   - **API 文件**: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+### 📁 檔案結構說明
+- `fast_api.py`: FastAPI 端點與模型載入核心邏輯。
+- `static/index.html`: 基於 React 實作的單頁 Web UI。
+- `test_api.py`: 提供給開發者的 API 調用測試範例。
+
+---
+
+## Running the toolbox (Original)
 
 Both Windows and Linux are supported.
 1. Install [ffmpeg](https://ffmpeg.org/download.html#get-packages). This is necessary for reading audio files. Check if it's installed by running in a command line
